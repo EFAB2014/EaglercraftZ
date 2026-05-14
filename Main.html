@@ -1,10 +1,40 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title>My Website</title>
-</head>
 <body>
 
-<h1>Hello<h1>
+<button onclick="launch()">Launch</button>
+
+<script>
+const FILE_URL =
+"https://yourwebsite.com/game.xml";
+
+async function launch() {
+
+    const response = await fetch(FILE_URL);
+    const text = await response.text();
+
+    // parse XML
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(text, "text/xml");
+
+    // get HTML content
+    const html =
+      xml.querySelector("Content").textContent;
+
+    // open new page
+    const win = window.open("", "_blank");
+
+    // inject HTML
+    win.document.open();
+    win.document.write(html);
+    win.document.close();
+
+    // fullscreen
+    win.onload = () => {
+        win.document.documentElement.requestFullscreen();
+    };
+}
+</script>
 
 </body>
 </html>
