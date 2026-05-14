@@ -6,7 +6,7 @@
 
 <script>
 const FILE_URL =
-"https://cdn.jsdelivr.net/gh/EFAB2014/Eaglercraft@main/game.xml?v=2";
+"https://cdn.jsdelivr.net/gh/EFAB2014/Eaglercraft@main/game.xml?v=3";
 
 async function launch() {
 
@@ -18,8 +18,11 @@ async function launch() {
     const xml = parser.parseFromString(text, "text/xml");
 
     // get HTML content
-    const html =
-      xml.querySelector("Content").textContent;
+const contentNode =
+xml.querySelector("Content");
+
+const html =
+contentNode.childNodes[0].nodeValue;
 
     // open new page
     const win = window.open("", "_blank");
