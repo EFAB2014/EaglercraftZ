@@ -6,7 +6,7 @@
 
 <script>
 const FILE_URL =
-"https://cdn.jsdelivr.net/gh/EFAB2014/Eaglercraft@main/game.xml?v=4";
+"https://cdn.jsdelivr.net/gh/EFAB2014/Eaglercraft@main/game.xml?v=5";
 
 async function launch() {
 
@@ -30,6 +30,7 @@ contentNode.childNodes[0].nodeValue;
     // inject HTML
     win.document.open();
     win.document.write(html);
+    console.log(html);
     win.document.close();
 
     // fullscreen
