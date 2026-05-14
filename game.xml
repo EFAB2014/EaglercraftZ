@@ -1,0 +1,32 @@
+<Module>
+  <Content type="html">
+    <![CDATA[
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My App</title>
+  <style>
+    body {
+      margin:0;
+      background:black;
+      color:white;
+      overflow:hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Hello from external XML!</h1>
+
+<script>
+console.log("Loaded!");
+</script>
+
+</body>
+</html>
+
+    ]]>
+  </Content>
+</Module>
