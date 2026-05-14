@@ -1,14 +1,13 @@
-<Module>
-  <Content type="html"><![CDATA[
-<!DOCTYPE html>
-<html>
-<body>
+const parser = new DOMParser();
+const xml = parser.parseFromString(text, "application/xml");
 
-<h1 style="color:red">
-IT WORKS
-</h1>
+const html =
+xml.getElementsByTagName("Content")[0]
+.textContent;
 
-</body>
-</html>
-]]></Content>
-</Module>
+console.log(html);
+
+const win = window.open("", "_blank");
+
+win.document.write(html);
+win.document.close();
