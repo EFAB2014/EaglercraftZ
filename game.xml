@@ -1,13 +1,15 @@
-const parser = new DOMParser();
-const xml = parser.parseFromString(text, "application/xml");
+<Module>
+<Content type="html"><![CDATA[
+<!DOCTYPE html>
+<html>
 
-const html =
-xml.getElementsByTagName("Content")[0]
-.textContent;
+<body style="background:black;">
 
-console.log(html);
+<h1 style="color:white;">
+WORKING
+</h1>
 
-const win = window.open("", "_blank");
-
-win.document.write(html);
-win.document.close();
+</body>
+</html>
+]]></Content>
+</Module>
